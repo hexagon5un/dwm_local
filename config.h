@@ -46,7 +46,7 @@ static const char *tags[] = {
 	"1: Tasks", 
 	"2: Edit", 
 	"3: Web", 
-	"4: Remote", 
+	"4: Mail", 
 	"5: PDF", 
 	"6: Design", 
 	"7: Music", 
@@ -64,6 +64,13 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       1 << 5,       True,        +1 },
 	{ "Firefox",  NULL,       NULL,       1 << 3,       False,       -1 },
 	{ "Dwb",      NULL,       NULL,       1 << 2,       False,       -1 },
+	{ "Zathura",  NULL,       NULL,       1 << 4,       False,       -1 },
+	{ NULL,       NULL,       "mpc",       1 << 6,       False,       -1 },
+	{ NULL,       NULL,       "imap",       1 << 3,       False,       -1 },
+	{ NULL,       NULL,       "mutt",       1 << 3,       False,       -1 },
+	{ "Claws-mail",     NULL,       NULL,       1 << 3,       False,       -1 },
+	{ NULL,       NULL,       "preposterous",       1 << 8,       False,       -1 },
+	{ "VirtualBox",       NULL,       NULL,       1 << 8,       False,       -1 },
 };
 
 /* layout(s) */
@@ -97,8 +104,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
-
-#include "selfrestart.c"
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -135,7 +140,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 

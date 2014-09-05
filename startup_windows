@@ -1,0 +1,7 @@
+st -t mpc -e ncmpcpp &
+
+st -t imap -e watch -n 90 offlineimap &
+st -t mutt -e mutt &
+
+st -t preposterous -e /usr/local/bin/preposterous &
+
