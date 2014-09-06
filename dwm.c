@@ -201,6 +201,7 @@ static void resizeclient(Client *c, int x, int y, int w, int h);
 static void resizemouse(const Arg *arg);
 static void restack(Monitor *m);
 static void run(void);
+static void runorraise(const Arg *arg);
 static void runAutostart(void);
 static void scan(void);
 static Bool sendevent(Client *c, Atom proto);
@@ -1463,6 +1464,30 @@ void
 runAutostart(void) {
 	system("cd ~/.dwm; ./autostart_blocking.sh");
 	system("cd ~/.dwm; ./autostart.sh &");
+}
+
+void
+runorraise(const Arg *arg) {
+    char *app = ((char **)arg->v)[4];
+    Arg a = { .ui = ~0 };
+    Monitor *mon;
+    Client *c;
+    XClassHint hint = { NULL, NULL };
+    /* Tries to find the client */
+    for (mon = mons; mon; mon = mon->next) {
+        for (c = mon->cl->clients; c; c = c->next) {
+            XGetClassHint(dpy, c->win, &hint);
+            if (hint.res_class && strcmp(app, hint.res_class) == 0) {
+                a.ui = c->tags;
+                view(&a);
+                focus(c);
+                XRaiseWindow(dpy, c->win);
+                return;
+            }
+        }
+    }
+    /* Client not found: spawn it */
+    spawn(arg);
 }
 
 void
