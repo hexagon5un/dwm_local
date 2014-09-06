@@ -91,7 +91,8 @@ static const Layout layouts[] = {
 //	{ "TTT",      bstack },
 //	{ "===",      bstackhoriz },
 };
-#include "keepfloatingposition.c"
+
+// #include "keepfloatingposition.c"
 
 /* key definitions */
 #define MODKEY Mod4Mask
