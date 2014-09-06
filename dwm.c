@@ -2125,8 +2125,8 @@ view(const Arg *arg) {
 		if(m != selmon && newtagset & m->tagset[m->seltags]) {
 			/* prevent displaying all tags (MODKEY-0) when multiple monitors
 			 * are connected */
-			if(newtagset & selmon->tagset[selmon->seltags])
-				return;
+			/*if(newtagset & selmon->tagset[selmon->seltags])*/
+				/*return;*/
 			m->seltags ^= 1;
 			m->tagset[m->seltags] = selmon->tagset[selmon->seltags];
 			attachclients(m);
