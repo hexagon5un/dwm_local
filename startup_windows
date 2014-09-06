@@ -7,3 +7,5 @@ st -t preposterous -e /usr/local/bin/preposterous &
 
 st -t tasks &
 
+st -t twitter -e rainbowstream &
+
