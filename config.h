@@ -62,7 +62,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{"Inkscape",  NULL,	  NULL,	      1 << 5,       False,        +1 },
 	{ "Gimp",     NULL,       NULL,       1 << 5,       True,        +1 },
-	{ "Firefox",  NULL,       NULL,       1 << 3,       False,       -1 },
+	{ "Firefox", "Navigator",  NULL,       1 << 2,       False,       -1 },
 	{ "Dwb",      NULL,       NULL,       1 << 2,       False,       -1 },
 	{ "Zathura",  NULL,       NULL,       1 << 4,       False,       -1 },
 	{ "Eagle",    NULL,       NULL,       1 << 5,       False,       -1 },
@@ -111,12 +111,14 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", font, "-nb
 static const char *termcmd[]  = { "st", NULL };
 
 static const char *dwb[] = { "dwb", NULL, NULL, NULL, "Dwb" };
+static const char *firefox[] = { "firefox", NULL, NULL, NULL, "Mozilla Firefox" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_d,      runorraise,     {.v = dwb } },
+	{ MODKEY|ShiftMask,              XK_d,      runorraise,     {.v = firefox } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
