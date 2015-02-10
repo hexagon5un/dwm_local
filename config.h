@@ -60,19 +60,32 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{"Inkscape",  NULL,	  NULL,	      1 << 5,       False,        +1 },
-	{ "Gimp",     NULL,       NULL,       1 << 5,       True,        +1 },
+	{ NULL,       NULL,       "tasks",       1 << 0,       False,       -1 },
+		
+	{ "Gvim",      NULL,       NULL,       1 << 1,       False,       -1 },
+
 	{ "Firefox", "Navigator",  NULL,       1 << 2,       False,       -1 },
 	{ "Dwb",      NULL,       NULL,       1 << 2,       False,       -1 },
-	{ "Zathura",  NULL,       NULL,       1 << 4,       False,       -1 },
-	{ "Eagle",    NULL,       NULL,       1 << 5,       False,       -1 },
-	{ "Kicad",    NULL,       NULL,       1 << 5,       False,       -1 },
-	{ NULL,       NULL,       "mpc",       1 << 6,       False,       -1 },
+
 	{ NULL,       NULL,       "imap",       1 << 3,       False,       -1 },
 	{ NULL,       NULL,       "mutt",       1 << 3,       False,       -1 },
-	{ NULL,       NULL,       "tasks",       1 << 0,       False,       -1 },
-	{ NULL,       NULL,       "twitter",       1 << 8,       False,       -1 },
 	{ "Claws-mail",     NULL,       NULL,       1 << 3,       False,       -1 },
+
+	{ "Zathura",  NULL,       NULL,       1 << 4,       False,       -1 },
+	{ "MuPDF",  NULL,       NULL,       1 << 4,       False,       -1 },
+
+	{ "Eagle",    NULL,       NULL,       1 << 5,       False,       -1 },
+	{"Inkscape",  NULL,	  NULL,	      1 << 5,       False,        +1 },
+	{ "Gimp",     NULL,       NULL,       1 << 5,       True,        +1 },
+	{ "Kicad",    NULL,       NULL,       1 << 5,       False,       -1 },
+
+	{ NULL,       NULL,       "mpc",       1 << 6,       False,       -1 },
+
+	{ NULL,    NULL,       "Slic3r",       1 << 7,       False,       -1 },
+	{ NULL,    NULL,       "Pronterface",       1 << 7,       False,       -1 },
+	{ "Openscad",    NULL,       NULL,       1 << 7,       False,       -1 },
+	
+	{ NULL,       NULL,       "twitter",       1 << 8,       False,       -1 },
 	{ NULL,       NULL,       "preposterous",       1 << 8,       False,       -1 },
 	{ "VirtualBox",       NULL,       NULL,       1 << 8,       False,       -1 },
 };
