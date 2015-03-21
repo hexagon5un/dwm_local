@@ -78,6 +78,7 @@ static const Rule rules[] = {
 	{"Inkscape",  NULL,	  NULL,	      1 << 5,       False,        +1 },
 	{ "Gimp",     NULL,       NULL,       1 << 5,       True,        +1 },
 	{ "Kicad",    NULL,       NULL,       1 << 5,       False,       -1 },
+	{ "Audacity",    NULL,       NULL,       1 << 5,       False,       -1 },
 
 	{ NULL,       NULL,       "mpc",       1 << 6,       False,       -1 },
 
@@ -123,7 +124,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 //static const char *termcmd[]  = { "st", NULL };
-static const char *termcmd[]  = { "gnome-terminal", NULL };
+static const char *termcmd[]  = { "urxvt", NULL };
 
 static const char *dwb[] = { "dwb", NULL, NULL, NULL, "Dwb" };
 static const char *firefox[] = { "firefox", NULL, NULL, NULL, "Mozilla Firefox" };
