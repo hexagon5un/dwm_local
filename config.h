@@ -50,7 +50,7 @@ static const char *tags[] = {
 	"5: PDF", 
 	"6: Design", 
 	"7: Music", 
-	"8: 3DP", 
+	"8: Firefox", 
 	"9: Remote"
 };
  
@@ -64,7 +64,7 @@ static const Rule rules[] = {
 		
 	{ "Gvim",      NULL,       NULL,       1 << 1,       False,       -1 },
 
-	{ "Firefox", "Navigator",  NULL,       1 << 2,       False,       -1 },
+	{ "Firefox", "Navigator",  NULL,       1 << 7,       False,       -1 },
 	{ "Dwb",      NULL,       NULL,       1 << 2,       False,       -1 },
 
 	{ NULL,       NULL,       "imap",       1 << 3,       False,       -1 },
@@ -85,6 +85,7 @@ static const Rule rules[] = {
 	{ NULL,    NULL,       "Slic3r",       1 << 7,       False,       -1 },
 	{ NULL,    NULL,       "Pronterface",       1 << 7,       False,       -1 },
 	{ "Openscad",    NULL,       NULL,       1 << 7,       False,       -1 },
+	{ "Firefox", "Navigator",  NULL,       1 << 7,       False,       -1 },
 	
 	{ NULL,       NULL,       "twitter",       1 << 8,       False,       -1 },
 	{ NULL,       NULL,       "preposterous",       1 << 8,       False,       -1 },
